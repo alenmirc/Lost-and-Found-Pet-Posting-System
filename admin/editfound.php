@@ -1,0 +1,274 @@
+<?php
+        include("../config.php");
+        
+        if(!isset($_SESSION['admin'])){
+            header("Location: index.php");
+          }
+          
+          else{
+            $admin = $_SESSION['admin'];
+            $welcome = $admin['user'];
+          }
+        ?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Edit Found Pet</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">LFPRS</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+              
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="home.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                       
+                            <div class="sb-sidenav-menu-heading">Tools</div>
+                            <a class="nav-link" href="pending.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Pending Post
+                            </a>
+                            <a class="nav-link" href="users.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Users
+                            </a>
+                            <a class="nav-link" href="admins.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Admin
+                            </a>
+                            <a class="nav-link" href="registered.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Registered Pets
+                            </a>
+                            <a class="nav-link" href="lostpets.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Lost Pets
+                            </a>
+                            <a class="nav-link" href="foundpets.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Found Pets
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+   <?php echo $welcome; ?>
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                    <?php
+
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve the ID from the query parameter
+    $id = $_GET['id'];
+
+    // Get form data
+    $registered = $_POST['registered'];
+    $userid = $_POST['userid'];
+    $petid = $_POST['petid'];
+    $petname = $_POST['petname'];
+    $pet = $_POST['pet'];
+    $fur = $_POST['fur'];
+    $breed = $_POST['breed'];
+    $petimage = $_POST['petimage'];
+    $placefound = $_POST['placefound'];
+    $foundername = $_POST['foundername'];
+    $foundercontact = $_POST['foundercontact'];
+    $founderemail = $_POST['founderemail'];
+    $surrender = $_POST['surrender'];
+    $authorityname = $_POST['authorityname'];
+    $authoritycontact = $_POST['authoritycontact'];
+    $authorityaddress = $_POST['authorityaddress'];
+    $approved = isset($_POST['approved']) ? 1 : 0;
+    $expirationdate = $_POST['expirationdate'];
+
+    // Update the record in the "reportfoundpet" table
+    // Modify the SQL query according to your table structure
+    $sql = "UPDATE reportfoundpet SET registered=?, userid=?, petid=?, petname=?, pet=?, fur=?, breed=?, petimage=?, placefound=?, foundername=?, foundercontact=?, founderemail=?, surrender=?, authorityname=?, authoritycontact=?, authorityaddress=?, approved=?, expirationdate=? WHERE id=?";
+    
+    $stmt = $db->prepare($sql);
+    $stmt->bind_param('iissssssssssisssisi', $registered, $userid, $petid, $petname, $pet, $fur, $breed, $petimage, $placefound, $foundername, $foundercontact, $founderemail, $surrender, $authorityname, $authoritycontact, $authorityaddress, $approved, $expirationdate, $id);
+    
+    if ($stmt->execute()) {
+        echo "Record updated successfully.";
+    } else {
+        echo "Error updating record: " . $db->error;
+    }
+    
+    $stmt->close();
+}
+
+// Retrieve the ID from the query parameter
+$id = $_GET['id'];
+
+// Retrieve the record from the "reportfoundpet" table
+// Modify the SQL query according to your table structure
+$sql = "SELECT * FROM reportfoundpet WHERE id=?";
+$stmt = $db->prepare($sql);
+$stmt->bind_param('i', $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+
+// Close the database connection
+$db->close();
+?>
+
+                    
+                  
+                        
+<div class="container">
+        <h2>Edit Found Pet Report</h2>
+        <form method="POST" action="">
+            <div class="mb-3">
+                <label for="registered" class="form-label">Registered:</label>
+                <input type="text" class="form-control" name="registered" value="<?php echo $row['registered']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="userid" class="form-label">User ID:</label>
+                <input type="text" class="form-control" name="userid" value="<?php echo $row['userid']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="petid" class="form-label">Pet ID:</label>
+                <input type="text" class="form-control" name="petid" value="<?php echo $row['petid']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="petname" class="form-label">Pet Name:</label>
+                <input type="text" class="form-control" name="petname" value="<?php echo $row['petname']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="pet" class="form-label">Pet Type:</label>
+                <input type="text" class="form-control" name="pet" value="<?php echo $row['pet']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="fur" class="form-label">Fur:</label>
+                <input type="text" class="form-control" name="fur" value="<?php echo $row['fur']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="breed" class="form-label">Breed:</label>
+                <input type="text" class="form-control" name="breed" value="<?php echo $row['breed']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="petimage" class="form-label">Pet Image:</label>
+                <input type="text" class="form-control" name="petimage" value="<?php echo $row['petimage']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="placefound" class="form-label">Place Found:</label>
+                <input type="text" class="form-control" name="placefound" value="<?php echo $row['placefound']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="foundername" class="form-label">Founder's Name:</label>
+                <input type="text" class="form-control" name="foundername" value="<?php echo $row['foundername']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="foundercontact" class="form-label">Founder's Contact Number:</label>
+                <input type="text" class="form-control" name="foundercontact" value="<?php echo $row['foundercontact']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="founderemail" class="form-label">Founder's Email:</label>
+                <input type="email" class="form-control" name="founderemail" value="<?php echo $row['founderemail']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="surrender" class="form-label">Surrender:</label>
+                <input type="text" class="form-control" name="surrender" value="<?php echo $row['surrender']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="authorityname" class="form-label">Authority's Name:</label>
+                <input type="text" class="form-control" name="authorityname" value="<?php echo $row['authorityname']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="authoritycontact" class="form-label">Authority's Contact Number:</label>
+                <input type="text" class="form-control" name="authoritycontact" value="<?php echo $row['authoritycontact']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="authorityaddress" class="form-label">Authority's Address:</label>
+                <input type="text" class="form-control" name="authorityaddress" value="<?php echo $row['authorityaddress']; ?>" >
+            </div>
+            
+            <div class="mb-3">
+                <label for="approved" class="form-label">Approved:</label>
+                <input type="checkbox" class="form-check-input" name="approved" <?php if ($row['approved'] == 1) echo "checked"; ?>>
+            </div>
+            
+            <div class="mb-3">
+                <label for="expirationdate" class="form-label">Expiration Date:</label>
+                <input type="date" class="form-control" name="expirationdate" value="<?php echo $row['expirationdate']; ?>" >
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+
+                    
+                    
+                    </div>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; LFPRS 2023</div>
+                           
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
+</html>
