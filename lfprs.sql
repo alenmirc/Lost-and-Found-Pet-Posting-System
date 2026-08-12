@@ -109,8 +109,8 @@ INSERT INTO `qrcode` (`id`, `petid`, `qrtext`, `qrtest2`, `qrimage`) VALUES
 (7, '', 'alen', '', '1688224743.png'),
 (8, '', 'alen', '', '1688224761.png'),
 (9, '', 'alen', '', '1688224778.png'),
-(10, '', 'alen', 'alenzmmb@gmail.com', 'images/64a04757266be.png'),
-(11, '', 'alenzmmb@gmail.com', 'alenzmmb@gmail.com', 'images/64a047f0814b5.png'),
+(10, '', 'alen', 'admin@admin.com', 'images/64a04757266be.png'),
+(11, '', 'admin@admin.com', 'admin@admin.com', 'images/64a047f0814b5.png'),
 (12, '', 'test@test.com', 'test@test.com', 'images/64a0482fab94f.png'),
 (13, '', 'asdfasdf', 'asdfasdf@asdf', 'images/64a05583bbd2b.png'),
 (14, '', 'test', 'test@tse', 'images/64a118afe5b48.png'),
@@ -167,16 +167,16 @@ CREATE TABLE `registerpet` (
 INSERT INTO `registerpet` (`id`, `petid`, `userid`, `petname`, `pet`, `breed`, `fur`, `petimage`, `ownersname`, `contactnumber`, `address`, `email`, `notes`, `qr`, `date`) VALUES
 (14, '143362', 1, 'Brando', 'dog', 'Pitbull', 'Black', 'uploads/registeredpets/64a91b0bea3ad2023-07-08-10-15-07pitbull.jpg', 'Mark', '09761532523', 'Taguig City', 'mark@gmail.com', '', 'uploads/qrgenerated/64a91b0be4a5d.png', '2023-07-08'),
 (15, '864856', 10, 'Cookie', 'dog', 'Japanese Breed', 'White', 'uploads/registeredpets/64a9508dbc5342023-07-08-14-03-25cook.jpg', 'Cherry Cantuba III', '09102560491', '1274 Tambunting St. Sta. Cruz Manila', 'cherry.7.18.02@gmail.com', 'saoli nyo lang may 50 kayo sakin.', 'uploads/qrgenerated/64a9508daac15.png', '2023-07-08'),
-(23, 'fea11d', 1, 'Tyson', 'dog', 'Breed', 'Brown', 'uploads/registeredpets/64b148dcb7e7b2023-07-14-15-08-441.jpg', 'Alen', '09565284273', 'Tatalon, Quezon City', 'alenzmmb@gmail.com', 'Please contact me if ever', 'uploads/qrgenerated/64b148dca171a.png', '2023-07-14'),
-(27, '4c12c3', 1, 'test', 'dog', 'tes', 'ttes', 'uploads/registeredpets/64b4171d4100f2023-07-16-18-13-17about-1.jpg', 'Alen Banez', '09565284273', 'Tatalon, Quezon City', 'alenzmmb@gmail.com', 'test', 'uploads/qrgenerated/64b4171d39e50.png', '2023-07-16'),
-(28, '815a4b', 1, 'test', 'dog', 'test', 'etst', 'uploads/registeredpets/64b4176e80d6a2023-07-16-18-14-38gallery-5.jpg', 'Alen Banez', '09565284273', 'Tatalon, Quezon City', 'alenzmmb@gmail.com', 'asdf', 'uploads/qrgenerated/64b4176e7957c.png', '2023-07-16'),
-(29, '9dc83a', 1, 'test2', 'dog', 'test', 'test', 'uploads/registeredpets/64b41827c763b2023-07-16-18-17-43about-1.jpg', 'Alen Banez', '09565284273', 'Tatalon, Quezon City', 'alenzmmb@gmail.com', 'asdfasdf', 'uploads/qrgenerated/64b41827bf953.png', '2023-07-16'),
-(30, 'ccc241', 1, 'test', 'dog', 'test', 'test', 'uploads/registeredpets/64b4199a5d87f2023-07-16-18-23-54about-1.jpg', 'Alen Banez', '09565284273', 'Tatalon, Quezon City', 'alenzmmb@gmail.com', 'asdfasdf', 'uploads/qrgenerated/64b4199a56227.png', '2023-07-16'),
-(32, '2635ec', 1, 'asdf', 'dog', 'asdf', 'asdfasdf', 'uploads/registeredpets/64b4259ac45412023-07-16-19-15-06about-1.jpg', 'Alen Banez', '09565284273', 'Tatalon, Quezon City', 'alenzmmb@gmail.com', 'asdf', 'uploads/qrgenerated/64b4259abd8bc.png', '2023-07-16'),
-(34, 'edec04', 1, 'test', 'dog', 'test', 'asdf', 'uploads/registeredpets/64b426941581c2023-07-16-19-19-16about-1.jpg', 'Alen Banez', '09565284273', 'Tatalon, Quezon City', 'alenzmmb@gmail.com', 'asdf', 'uploads/qrgenerated/64b426940e97d.png', '2023-07-16'),
-(36, '0521f2', 1, '0', '0', 'tes', 'testetst', 'uploads/registeredpets/64b462f0261fe2023-07-16-23-36-48about-1.jpg', 'Alen Banez', '09565284273', 'Tatalon, Quezon City', 'alenzmmb@gmail.com', 'test', 'uploads/qrgenerated/64b462f01f4a6.png', '2023-07-16'),
-(39, 'f41ee9', 1, 'asdf', 'dog', 'as', 'dfasdf', 'uploads/registeredpets/64b538a5363922023-07-17-14-48-37about-1.jpg', 'Alen Banez', '09565284273', 'Tatalon, Quezon City', 'alenzmmb@gmail.com', 'asdf', 'uploads/qrgenerated/64b538a522d9c.png', '2023-07-17'),
-(40, 'eac5cc', 1, 'asdf', 'dog', 'asdf', 'asdf', 'uploads/registeredpets/64b539a4ebfdf2023-07-17-14-52-52about-1.jpg', 'Alen Banez', '09565284273', 'Tatalon, Quezon City', 'alenzmmb@gmail.com', '', 'uploads/qrgenerated/64b539a4e41c8.png', '2023-07-17');
+(23, 'fea11d', 1, 'Tyson', 'dog', 'Breed', 'Brown', 'uploads/registeredpets/64b148dcb7e7b2023-07-14-15-08-441.jpg', 'Alen', '09999999999', 'Tatalon, Quezon City', 'admin@admin.com', 'Please contact me if ever', 'uploads/qrgenerated/64b148dca171a.png', '2023-07-14'),
+(27, '4c12c3', 1, 'test', 'dog', 'tes', 'ttes', 'uploads/registeredpets/64b4171d4100f2023-07-16-18-13-17about-1.jpg', 'Alen', '09999999999', 'Tatalon, Quezon City', 'admin@admin.com', 'test', 'uploads/qrgenerated/64b4171d39e50.png', '2023-07-16'),
+(28, '815a4b', 1, 'test', 'dog', 'test', 'etst', 'uploads/registeredpets/64b4176e80d6a2023-07-16-18-14-38gallery-5.jpg', 'Alen', '09999999999', 'Tatalon, Quezon City', 'admin@admin.com', 'asdf', 'uploads/qrgenerated/64b4176e7957c.png', '2023-07-16'),
+(29, '9dc83a', 1, 'test2', 'dog', 'test', 'test', 'uploads/registeredpets/64b41827c763b2023-07-16-18-17-43about-1.jpg', 'Alen', '09999999999', 'Tatalon, Quezon City', 'admin@admin.com', 'asdfasdf', 'uploads/qrgenerated/64b41827bf953.png', '2023-07-16'),
+(30, 'ccc241', 1, 'test', 'dog', 'test', 'test', 'uploads/registeredpets/64b4199a5d87f2023-07-16-18-23-54about-1.jpg', 'Alen', '09999999999', 'Tatalon, Quezon City', 'admin@admin.com', 'asdfasdf', 'uploads/qrgenerated/64b4199a56227.png', '2023-07-16'),
+(32, '2635ec', 1, 'asdf', 'dog', 'asdf', 'asdfasdf', 'uploads/registeredpets/64b4259ac45412023-07-16-19-15-06about-1.jpg', 'Alen', '09999999999', 'Tatalon, Quezon City', 'admin@admin.com', 'asdf', 'uploads/qrgenerated/64b4259abd8bc.png', '2023-07-16'),
+(34, 'edec04', 1, 'test', 'dog', 'test', 'asdf', 'uploads/registeredpets/64b426941581c2023-07-16-19-19-16about-1.jpg', 'Alen', '09999999999', 'Tatalon, Quezon City', 'admin@admin.com', 'asdf', 'uploads/qrgenerated/64b426940e97d.png', '2023-07-16'),
+(36, '0521f2', 1, '0', '0', 'tes', 'testetst', 'uploads/registeredpets/64b462f0261fe2023-07-16-23-36-48about-1.jpg', 'Alen', '09999999999', 'Tatalon, Quezon City', 'admin@admin.com', 'test', 'uploads/qrgenerated/64b462f01f4a6.png', '2023-07-16'),
+(39, 'f41ee9', 1, 'asdf', 'dog', 'as', 'dfasdf', 'uploads/registeredpets/64b538a5363922023-07-17-14-48-37about-1.jpg', 'Alen', '09999999999', 'Tatalon, Quezon City', 'admin@admin.com', 'asdf', 'uploads/qrgenerated/64b538a522d9c.png', '2023-07-17'),
+(40, 'eac5cc', 1, 'asdf', 'dog', 'asdf', 'asdf', 'uploads/registeredpets/64b539a4ebfdf2023-07-17-14-52-52about-1.jpg', 'Alen', '09999999999', 'Tatalon, Quezon City', 'admin@admin.com', '', 'uploads/qrgenerated/64b539a4e41c8.png', '2023-07-17');
 
 -- --------------------------------------------------------
 
@@ -212,9 +212,9 @@ CREATE TABLE `reportfoundpet` (
 --
 
 INSERT INTO `reportfoundpet` (`id`, `registered`, `userid`, `petid`, `petname`, `pet`, `fur`, `breed`, `petimage`, `placefound`, `foundername`, `foundercontact`, `founderemail`, `surrender`, `authorityname`, `authoritycontact`, `authorityaddress`, `approved`, `date`, `expirationdate`) VALUES
-(13, 0, 1, '143362', 'Brando', 'dog', 'Black', 'Pitbull', 'uploads/foundpets/64b48007817872023-07-17-01-40-55gallery-2.jpg', 'test2', 'Alen Banez', '09565284273', 'alenzmmb@gmail.com', 0, '', '', '', 0, '2023-07-17', '2023-09-17'),
-(14, 0, 1, '143362', 'Brando', 'dog', 'Black', 'Pitbull', 'uploads/foundpets/64b4804b04fd02023-07-17-01-42-03about.jpg', 'test', 'Alen Banez', '09565284273', 'alenzmmb@gmail.com', 0, '', '', '', 0, '2023-07-17', '2023-09-17'),
-(15, 1, 1, '143362', 'Brando', 'dog', 'Black', 'Pitbull', 'uploads/foundpets/64b480b9d7d492023-07-17-01-43-53bg_1.jpg', 'test', 'Alen Banez', '09565284273', 'alenzmmb@gmail.com', 0, '', '', '', 1, '2023-07-17', '2023-09-17');
+(13, 0, 1, '143362', 'Brando', 'dog', 'Black', 'Pitbull', 'uploads/foundpets/64b48007817872023-07-17-01-40-55gallery-2.jpg', 'test2', 'Alen', '09999999999', 'admin@admin.com', 0, '', '', '', 0, '2023-07-17', '2023-09-17'),
+(14, 0, 1, '143362', 'Brando', 'dog', 'Black', 'Pitbull', 'uploads/foundpets/64b4804b04fd02023-07-17-01-42-03about.jpg', 'test', 'Alen', '09999999999', 'admin@admin.com', 0, '', '', '', 0, '2023-07-17', '2023-09-17'),
+(15, 1, 1, '143362', 'Brando', 'dog', 'Black', 'Pitbull', 'uploads/foundpets/64b480b9d7d492023-07-17-01-43-53bg_1.jpg', 'test', 'Alen', '09999999999', 'admin@admin.com', 0, '', '', '', 1, '2023-07-17', '2023-09-17');
 
 -- --------------------------------------------------------
 
@@ -245,12 +245,12 @@ CREATE TABLE `reportlostpet` (
 --
 
 INSERT INTO `reportlostpet` (`id`, `registered`, `userid`, `petname`, `pet`, `fur`, `breed`, `petimage`, `lastfound`, `contactname`, `contactnumber`, `contactemail`, `approved`, `date`, `expirationdate`) VALUES
-(34, 1, 1, 'Brando', 'dog', 'Black', 'Pitbull', 'uploads/lostpets/64b46287be1082023-07-16-23-35-03about-1.jpg', 'test', 'Alen Banez', '09565284273', 'alenzmmb@gmail.com', 1, '2023-07-16', '2023-09-16'),
-(37, 1, 1, 'test', 'dog', 'testetst', 'tes', 'uploads/lostpets/64b4637904fde2023-07-16-23-39-05about.jpg', 'test', 'Alen Banez', '09565284273', 'alenzmmb@gmail.com', 1, '2023-07-16', '2023-09-16'),
-(39, 1, 1, 'bcv', 'dog', 'cvb', 'cbv', 'uploads/lostpets/64b46c01569ab2023-07-17-00-15-29gallery-5.jpg', 'cvb', 'Alen Banez', '09565284273', 'alenzmmb@gmail.com', 0, '2023-07-17', '2023-09-17'),
-(40, 1, 1, 'vbn', 'dog', 'vbn', 'vbn', 'uploads/lostpets/64b46c1bd02ac2023-07-17-00-15-55gallery-3.jpg', 'vbn', 'Alen Banez', '09565284273', 'alenzmmb@gmail.com', 0, '2023-07-17', '2023-09-17'),
-(41, 0, 1, 'dsa', 'dog', 'asd', 'asd', 'uploads/lostpets/64b46cf89f6de2023-07-17-00-19-36image_5.jpg', 'asd', 'Alen Banez', '09565284273', 'alenzmmb@gmail.com', 0, '2023-07-17', '2023-09-17'),
-(43, 0, 1, 'TESTER', 'dog', 'asdfasdfTESTER', 'asdfTESTER', 'uploads/lostpets/64b537b778fd02023-07-17-14-44-39about-1.jpg', 'TESTER', 'Alen Banez', '09565284273', 'alenzmmb@gmail.com', 1, '2023-07-17', '2023-09-17');
+(34, 1, 1, 'Brando', 'dog', 'Black', 'Pitbull', 'uploads/lostpets/64b46287be1082023-07-16-23-35-03about-1.jpg', 'test', 'Alen', '09999999999', 'admin@admin.com', 1, '2023-07-16', '2023-09-16'),
+(37, 1, 1, 'test', 'dog', 'testetst', 'tes', 'uploads/lostpets/64b4637904fde2023-07-16-23-39-05about.jpg', 'test', 'Alen', '09999999999', 'admin@admin.com', 1, '2023-07-16', '2023-09-16'),
+(39, 1, 1, 'bcv', 'dog', 'cvb', 'cbv', 'uploads/lostpets/64b46c01569ab2023-07-17-00-15-29gallery-5.jpg', 'cvb', 'Alen', '09999999999', 'admin@admin.com', 0, '2023-07-17', '2023-09-17'),
+(40, 1, 1, 'vbn', 'dog', 'vbn', 'vbn', 'uploads/lostpets/64b46c1bd02ac2023-07-17-00-15-55gallery-3.jpg', 'vbn', 'Alen', '09999999999', 'admin@admin.com', 0, '2023-07-17', '2023-09-17'),
+(41, 0, 1, 'dsa', 'dog', 'asd', 'asd', 'uploads/lostpets/64b46cf89f6de2023-07-17-00-19-36image_5.jpg', 'asd', 'Alen', '09999999999', 'admin@admin.com', 0, '2023-07-17', '2023-09-17'),
+(43, 0, 1, 'TESTER', 'dog', 'asdfasdfTESTER', 'asdfTESTER', 'uploads/lostpets/64b537b778fd02023-07-17-14-44-39about-1.jpg', 'TESTER', 'Alen', '09999999999', 'admin@admin.com', 1, '2023-07-17', '2023-09-17');
 
 -- --------------------------------------------------------
 
@@ -319,8 +319,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phonenumber`, `address`, `password`, `verification_code`, `is_verified`) VALUES
-(1, 'Alen', 'Banez', 'alenzmmb@gmail.com', '09565284273', 'Tatalon, Quezon City', '123', '', 1),
-(10, 'Cherry', 'Cantuba III', 'cherry.7.18.02@gmail.com', '09102560491', '1274 Tambunting St. Sta. Cruz Manila', '-640509040147Che-', '9b388bb5a59e6bef152b9d46b0c55bcb', 1);
+(1, 'Alen', 'Admin', 'admin@admin.com', '0999999999', 'Philippines', '123', '', 1),
+(10, 'Test', 'test', 'superadmin@admin.com', '0919999999', 'Philippines', '-640509040147Che-', '9b388bb5a59e6bef152b9d46b0c55bcb', 1);
 
 --
 -- Indexes for dumped tables
