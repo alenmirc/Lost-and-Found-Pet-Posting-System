@@ -1,8 +1,10 @@
 # LFPRS - Lost and Found Pet Rescue System
 
-## 🔗 Live Demo
+## Live Demo
 
-**[View Live Demo](http://qrpaw.rf.gd/)**
+You can access the LFPRS Web demo here:
+
+🔗 http://qrpaw.rf.gd/
 
 ## 🐾 About
 
