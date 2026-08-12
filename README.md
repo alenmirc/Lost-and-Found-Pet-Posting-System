@@ -7,6 +7,7 @@
 Users can register their pets, generate unique QR codes, and create posts about lost or found pets. When a QR code is scanned, it provides instant access to the pet's information and the owner's contact details, making reuniting lost pets with their owners quick and easy.
 
 ---
+> **Note**: This is a 2024 Capstone Project. While fully functional, the codebase is a work in progress and will be refined in future updates.
 
 ## Screenshots
 
