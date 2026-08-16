@@ -16,6 +16,10 @@ Users can register their pets, generate unique QR codes, and create posts about 
 > **Note**: This is a 2023 Capstone Project. While fully functional, the codebase is a work in progress and will be refined in future updates.
 
 ## Screenshots
+<img width="1895" height="905" alt="image" src="https://github.com/user-attachments/assets/f95e8077-c6cb-4bd5-9d2c-ed709016755e" />
+<img width="1890" height="916" alt="image" src="https://github.com/user-attachments/assets/593e3143-9733-415a-8149-44d526681963" />
+<img width="1893" height="896" alt="image" src="https://github.com/user-attachments/assets/a5c2c556-0958-4e6a-bebc-81e57d1a3dc0" />
+<img width="1893" height="899" alt="image" src="https://github.com/user-attachments/assets/d45293e5-860c-4ed0-80fe-081b44f83026" />
 
 ---
 
